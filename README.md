@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/coords.svg)](http://badge.fury.io/rb/coords)
+
 # Coords
 
 A small suite of coordinate system classes allowing distance calculations and conversions between types.
