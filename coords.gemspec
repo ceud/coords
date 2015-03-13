@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ceudonym@gmail.com"]
   spec.summary       = %q{A small suite of coordinate system classes.}
   spec.description   = %q{Coordinate system library enabling cross-system conversions.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/ceud/coords"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,5 +20,11 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec" 
+  spec.add_development_dependency "rspec"
+  # spec.add_development_dependency "rspec-nc"
+  # spec.add_development_dependency "guard"
+  # spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "pry-remote"
+  spec.add_development_dependency "pry-nav"
 end

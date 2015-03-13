@@ -31,5 +31,9 @@ module Coords
 
       Polar.new(radius, theta)
     end
+
+    def ==(point)
+      x == point.x && y == point.y
+    end
   end
 end
