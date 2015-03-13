@@ -17,11 +17,11 @@ Or install it yourself as:
     $ gem install coords
 
 ## Usage
-
+```ruby
 point = Coords::Cartesian2d.new(1, 2)
 d = point.distance(point2)
 polar_point = point.to_polar
-
+```
 ## Contributing
 
 1. Fork it ( https://github.com/ceud/coords/fork )
