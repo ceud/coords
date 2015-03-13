@@ -1,6 +1,6 @@
 # Coords
 
-A small suite of coordinate system classes allowign distance calcilations and conversions between types.
+A small suite of coordinate system classes allowing distance calculations and conversions between types.
 
 ## Installation
 
