@@ -1,5 +1,5 @@
 module Coords
-  class Spherical
+  class Spherical < Polar
     def initialize(radius, theta, phi)
       super(radius, theta)
       @phi = phi
@@ -30,6 +30,10 @@ module Coords
       z = radius * Math.cos(theta)
 
       Cartesian3d.new(x, y, z)
+    end
+
+    def ==(point)
+      radius == point.radius && theta == point.theta && phi == point.phi
     end
   end
 end

@@ -36,5 +36,9 @@ module Coords
 
       Cartesian2d.new(x, y)
     end
+
+    def ==(point)
+      radius == point.radius && theta == point.theta
+    end
   end
 end

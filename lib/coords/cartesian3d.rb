@@ -24,5 +24,9 @@ module Coords
 
       Spherical.new(radius, theta, phi)
     end
+
+    def ==(point)
+      x == point.x && y == point.y && z == point.z
+    end
   end
 end
