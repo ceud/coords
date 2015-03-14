@@ -14,4 +14,12 @@ module Coords
     radians / (Math::PI / 180)
   end
 
+  def self.rotate_matrix(matrix, times = 1, clockwise = true)
+    new_matrix = matrix
+    times.times.each do |i|
+      new_matrix = clockwise ? new_matrix.reverse.transpose : new_matrix.transpose.reverse
+    end
+    new_matrix
+  end
+
 end
