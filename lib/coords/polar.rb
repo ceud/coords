@@ -1,5 +1,6 @@
 module Coords
   class Polar
+
     def initialize(radius, theta)
       @radius = radius
       @theta = theta
@@ -38,7 +39,8 @@ module Coords
     end
 
     def ==(point)
-      radius == point.radius && theta == point.theta
+      radius.round(15) == point.radius.round(15) && theta.round(15) == point.theta.round(15)
     end
+
   end
 end

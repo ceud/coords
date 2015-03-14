@@ -1,5 +1,6 @@
 module Coords
   class Spherical < Polar
+
     def initialize(radius, theta, phi)
       super(radius, theta)
       @phi = phi
@@ -33,7 +34,8 @@ module Coords
     end
 
     def ==(point)
-      radius == point.radius && theta == point.theta && phi == point.phi
+      radius.round(15) == point.radius.round(15) && theta.round(15) == point.theta.round(15) && phi.round(15) == point.phi.round(15)
     end
+
   end
 end

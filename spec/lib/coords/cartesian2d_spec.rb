@@ -50,4 +50,33 @@ describe Coords::Cartesian2d do
       expect(subject != point2).to be false
     end
   end
+
+  describe '#translate' do
+    it 'translates values to new point' do
+      point2 = subject.translate(3, 4)
+      expect(subject.x).to eq(1)
+      expect(subject.y).to eq(2)
+      expect(point2.x).to eq(4)
+      expect(point2.y).to eq(6)
+    end
+  end
+
+  describe '#translate!' do
+    it 'translates values of original point' do
+      point2 = Coords::Cartesian2d.new(1, 2)
+      point2.translate!(3, 4)
+      expect(point2.x).to eq(4)
+      expect(point2.y).to eq(6)
+    end
+  end
+
+  describe '#rotate' do
+    it 'rotates values to new point' do
+      point2 = subject.rotate(Coords.radians(90))
+      expect(subject.x).to eq(1)
+      expect(subject.y).to eq(2)
+      expect(point2.x).to eq(-2)
+      expect(point2.y).to eq(1)
+    end
+  end
 end
