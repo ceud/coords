@@ -38,8 +38,8 @@ describe Coords::Polar do
   describe '#to_cartesian' do
     it 'returns point in cartesian coordinate system' do
       cart = subject.to_cartesian
-      expect(cart.x).to eq(-0.4161468365471424)
-      expect(cart.y).to eq(0.9092974268256817)
+      expect(cart.x).to eq(-0.416146836547142)
+      expect(cart.y).to eq(0.909297426825682)
     end
   end
 

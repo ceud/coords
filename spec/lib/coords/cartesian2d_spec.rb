@@ -39,7 +39,7 @@ describe Coords::Cartesian2d do
     it 'returns point in polar coordinate system' do
       polar = subject.to_polar
       expect(polar.radius).to eq(2.23606797749979)
-      expect(polar.theta).to eq(1.1071487177940904)
+      expect(polar.theta).to eq(1.10714871779409)
     end
   end
 
@@ -61,14 +61,14 @@ describe Coords::Cartesian2d do
     end
   end
 
-  describe '#translate!' do
-    it 'translates values of original point' do
-      point2 = Coords::Cartesian2d.new(1, 2)
-      point2.translate!(3, 4)
-      expect(point2.x).to eq(4)
-      expect(point2.y).to eq(6)
-    end
-  end
+  # describe '#translate!' do
+  #   it 'translates values of original point' do
+  #     point2 = Coords::Cartesian2d.new(1, 2)
+  #     point2.translate!(3, 4)
+  #     expect(point2.x).to eq(4)
+  #     expect(point2.y).to eq(6)
+  #   end
+  # end
 
   describe '#rotate' do
     it 'rotates values to new point' do
@@ -77,6 +77,49 @@ describe Coords::Cartesian2d do
       expect(subject.y).to eq(2)
       expect(point2.x).to eq(-2)
       expect(point2.y).to eq(1)
+    end
+  end
+
+  # describe '#rotate!' do
+  #   it 'rotates values of original point' do
+  #     point2 = Coords::Cartesian2d.new(1, 2)
+  #     point2.rotate!(Coords.radians(90))
+  #     expect(point2.x).to eq(-2)
+  #     expect(point2.y).to eq(1)
+  #   end
+  # end
+
+  describe '#reflect' do
+    it 'reflects values to new point by origin' do
+      point2 = subject.reflect('origin')
+      expect(subject.x).to eq(1)
+      expect(subject.y).to eq(2)
+      expect(point2.x).to eq(-1)
+      expect(point2.y).to eq(-2)
+    end
+
+    it 'reflects values to new point by line' do
+      point2 = subject.reflect('line')
+      expect(subject.x).to eq(1)
+      expect(subject.y).to eq(2)
+      expect(point2.x).to eq(2)
+      expect(point2.y).to eq(1)
+    end
+
+    it 'reflects values to new point by x axis' do
+      point2 = subject.reflect('x')
+      expect(subject.x).to eq(1)
+      expect(subject.y).to eq(2)
+      expect(point2.x).to eq(1)
+      expect(point2.y).to eq(-2)
+    end
+
+    it 'reflects values to new point by y axis' do
+      point2 = subject.reflect('y')
+      expect(subject.x).to eq(1)
+      expect(subject.y).to eq(2)
+      expect(point2.x).to eq(-1)
+      expect(point2.y).to eq(2)
     end
   end
 end
