@@ -39,17 +39,5 @@ module Coords
       @z += z2
     end
 
-    # def rotate(theta)
-    #   x_rotated = (x * Math.cos(theta)) - (y * Math.sin(theta))
-    #   y_rotated = (x * Math.sin(theta)) + (y * Math.cos(theta))
-
-    #   Cartesian2d.new(x_rotated, y_rotated)
-    # end
-
-    # def rotate!(theta)
-    #   @x = (x * Math.cos(theta)) - (y * Math.sin(theta))
-    #   @y = (x * Math.sin(theta)) + (y * Math.cos(theta))
-    # end
-
   end
 end
