@@ -30,11 +30,11 @@ module Coords
       radius = Math.sqrt((x ** 2) + (y ** 2));
       theta = Math.atan2(y, x);
 
-      Polar.new(radius.round(15), theta.round(15))
+      Polar.new(radius.round(12), theta.round(12))
     end
 
     def ==(point)
-      x.round(15) == point.x.round(15) && y.round(15) == point.y.round(15)
+      x.round(12) == point.x.round(12) && y.round(12) == point.y.round(12)
     end
 
     def translate(x2, y2)
@@ -56,8 +56,8 @@ module Coords
 
     def rotate!(theta)
       tmp_x = x
-      @x = ((x * Math.cos(theta)) - (y * Math.sin(theta))).round(15)
-      @y = ((tmp_x * Math.sin(theta)) + (y * Math.cos(theta))).round(15)
+      @x = ((x * Math.cos(theta)) - (y * Math.sin(theta))).round(12)
+      @y = ((tmp_x * Math.sin(theta)) + (y * Math.cos(theta))).round(12)
     end
 
     def reflect(type = 'origin')

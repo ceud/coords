@@ -35,11 +35,11 @@ module Coords
       x = radius * Math.cos(theta)
       y = radius * Math.sin(theta)
 
-      Cartesian2d.new(x.round(15), y.round(15))
+      Cartesian2d.new(x.round(12), y.round(12))
     end
 
     def ==(point)
-      radius.round(15) == point.radius.round(15) && theta.round(15) == point.theta.round(15)
+      radius.round(12) == point.radius.round(12) && theta.round(12) == point.theta.round(12)
     end
 
   end

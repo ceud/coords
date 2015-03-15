@@ -3,17 +3,17 @@ require 'spec_helper'
 describe Coords::Cartesian2d do
   subject { Coords::Cartesian2d.new(1, 2) }
 
-  describe '#x' do
-    it 'returns value of x coordinate' do
-      expect(subject.x).to eq(1)
-    end
-  end
+  # describe '#x' do
+  #   it 'returns value of x coordinate' do
+  #     expect(subject.x).to eq(1)
+  #   end
+  # end
 
-  describe '#y' do
-    it 'returns value of y coordinate' do
-      expect(subject.y).to eq(2)
-    end
-  end
+  # describe '#y' do
+  #   it 'returns value of y coordinate' do
+  #     expect(subject.y).to eq(2)
+  #   end
+  # end
 
   describe '#distance_squared' do
     it 'returns squared distance between two points' do
@@ -38,8 +38,8 @@ describe Coords::Cartesian2d do
   describe '#to_polar' do
     it 'returns point in polar coordinate system' do
       polar = subject.to_polar
-      expect(polar.radius).to eq(2.23606797749979)
-      expect(polar.theta).to eq(1.10714871779409)
+      expect(polar.radius).to eq(2.2360679775)
+      expect(polar.theta).to eq(1.107148717794)
     end
   end
 
@@ -61,15 +61,6 @@ describe Coords::Cartesian2d do
     end
   end
 
-  # describe '#translate!' do
-  #   it 'translates values of original point' do
-  #     point2 = Coords::Cartesian2d.new(1, 2)
-  #     point2.translate!(3, 4)
-  #     expect(point2.x).to eq(4)
-  #     expect(point2.y).to eq(6)
-  #   end
-  # end
-
   describe '#rotate' do
     it 'rotates values to new point' do
       point2 = subject.rotate(Coords.radians(90))
@@ -79,15 +70,6 @@ describe Coords::Cartesian2d do
       expect(point2.y).to eq(1)
     end
   end
-
-  # describe '#rotate!' do
-  #   it 'rotates values of original point' do
-  #     point2 = Coords::Cartesian2d.new(1, 2)
-  #     point2.rotate!(Coords.radians(90))
-  #     expect(point2.x).to eq(-2)
-  #     expect(point2.y).to eq(1)
-  #   end
-  # end
 
   describe '#reflect' do
     it 'reflects values to new point by origin' do

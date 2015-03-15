@@ -34,7 +34,7 @@ module Coords
     end
 
     def ==(point)
-      radius.round(15) == point.radius.round(15) && theta.round(15) == point.theta.round(15) && phi.round(15) == point.phi.round(15)
+      radius.round(12) == point.radius.round(12) && theta.round(12) == point.theta.round(12) && phi.round(12) == point.phi.round(12)
     end
 
   end

@@ -23,20 +23,49 @@ module Coords
       theta = Math.acos(z / radius)
       phi = Math.atan2(y, x)
 
-      Spherical.new(radius, theta, phi)
+      Spherical.new(radius.round(12), theta.round(12), phi.round(12))
     end
 
     def ==(point)
-      x.round(15) == point.x.round(15) && y.round(15) == point.y.round(15) && z.round(15) == point.z.round(15)
+      x.round(12) == point.x.round(12) && y.round(12) == point.y.round(12) && z.round(12) == point.z.round(12)
     end
 
     def translate(x2, y2, z2)
-      Cartesian3d.new(x + x2, y + y2, z + z2)
+      translated_point = Cartesian3d.new(x, y, z)
+      translated_point.translate!(x2, y2, z2)
+      translated_point
     end
 
     def translate!(x2, y2, z2)
       super(x2, y2)
       @z += z2
+    end
+
+    def rotate(rZ = 0, rX = 0, rY = 0)
+      rotated_point = Cartesian3d.new(x, y, z)
+      rotated_point.rotate!(rZ, rX, rY)
+      rotated_point
+    end
+
+    def rotate!(rZ = 0, rX = 0, rY = 0)
+      d = Math.hypot(y, x)
+      theta = Math.atan2(y, x) + rZ
+      @x = d * Math.cos(theta)
+      @y = d * Math.sin(theta)
+
+      d = Math.hypot(y, z)
+      theta = Math.atan2(z, y) + rX
+      @y = d * Math.cos(theta)
+      @z = d * Math.sin(theta)
+
+      d = Math.hypot(x, z)
+      theta = Math.atan2(x, z) + rY
+      @z = d * Math.cos(theta)
+      @x = d * Math.sin(theta)
+
+      @x = x.round(12)
+      @y = y.round(12)
+      @z = z.round(12)
     end
 
   end

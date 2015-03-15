@@ -25,9 +25,9 @@ describe Coords::Cartesian3d do
   describe '#to_spherical' do
     it 'returns point in spherical coordinate system' do
       spherical = subject.to_spherical
-      expect(spherical.radius).to eq(3.7416573867739413)
-      expect(spherical.theta).to eq(0.6405223126794245)
-      expect(spherical.phi).to eq(1.1071487177940904)
+      expect(spherical.radius).to eq(3.741657386774)
+      expect(spherical.theta).to eq(0.640522312679)
+      expect(spherical.phi).to eq(1.107148717794)
     end
   end
 
@@ -51,13 +51,15 @@ describe Coords::Cartesian3d do
     end
   end
 
-  describe '#translate!' do
-    it 'translates values of original point' do
-      point2 = Coords::Cartesian3d.new(1, 2, 3)
-      point2.translate!(3, 4, 5)
-      expect(point2.x).to eq(4)
-      expect(point2.y).to eq(6)
-      expect(point2.z).to eq(8)
+  describe '#rotate' do
+    it 'rotates values to new point' do
+      point2 = subject.rotate(Coords.radians(90), Coords.radians(90), Coords.radians(90))
+      expect(subject.x).to eq(1)
+      expect(subject.y).to eq(2)
+      expect(subject.z).to eq(3)
+      expect(point2.x).to eq(1)
+      expect(point2.y).to eq(-3)
+      expect(point2.z).to eq(2)
     end
   end
 end
