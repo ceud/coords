@@ -42,5 +42,33 @@ module Coords
       radius.round(12) == point.radius.round(12) && theta.round(12) == point.theta.round(12)
     end
 
+    def translate(radius2, theta2)
+      translated_point = Polar.new(radius, theta)
+      translated_point.translate!(radius2, theta2)
+      translated_point
+    end
+
+    def translate!(radius2, theta2)
+      c1 = self.to_cartesian
+      c2 = Polar.new(radius2, theta2).to_cartesian
+      c3 = c1.translate(c2.x, c2.y)
+      p = c3.to_polar
+
+      @radius = p.radius
+      @theta = p.theta
+    end
+
+    def rotate(radians)
+      rotated_point = Polar.new(radius, theta)
+      rotated_point.rotate!(radians)
+      rotated_point
+    end
+
+    def rotate!(radians)
+      @theta += radians
+      @theta -= (2 * Math::PI) while theta > (2 * Math::PI)
+      @theta += (2 * Math::PI) while theta < 0
+    end
+
   end
 end

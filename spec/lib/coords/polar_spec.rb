@@ -50,4 +50,24 @@ describe Coords::Polar do
       expect(subject != point2).to be false
     end
   end
+
+  describe '#translate' do
+    it 'translates values to new point' do
+      point2 = subject.translate(2, 1)
+      expect(subject.radius).to eq(1)
+      expect(subject.theta).to eq(2)
+      expect(point2.radius).to eq(2.676043576528)
+      expect(point2.theta).to eq(1.319872910435)
+    end
+  end
+
+  describe '#rotate' do
+    it 'rotates values to new point' do
+      point2 = subject.rotate(1)
+      expect(subject.radius).to eq(1)
+      expect(subject.theta).to eq(2)
+      expect(point2.radius).to eq(1)
+      expect(point2.theta).to eq(3)
+    end
+  end
 end

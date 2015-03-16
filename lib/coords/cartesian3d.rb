@@ -48,16 +48,19 @@ module Coords
     end
 
     def rotate!(rZ = 0, rX = 0, rY = 0)
+      # rotate clockwise around z axis
       d = Math.hypot(y, x)
       theta = Math.atan2(y, x) + rZ
       @x = d * Math.cos(theta)
       @y = d * Math.sin(theta)
 
+      # rotate clockwise around x axis
       d = Math.hypot(y, z)
       theta = Math.atan2(z, y) + rX
       @y = d * Math.cos(theta)
       @z = d * Math.sin(theta)
 
+      # rotate clockwise around y axis
       d = Math.hypot(x, z)
       theta = Math.atan2(x, z) + rY
       @z = d * Math.cos(theta)
