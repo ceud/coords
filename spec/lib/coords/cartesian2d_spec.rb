@@ -3,17 +3,17 @@ require 'spec_helper'
 describe Coords::Cartesian2d do
   subject { Coords::Cartesian2d.new(1, 2) }
 
-  # describe '#x' do
-  #   it 'returns value of x coordinate' do
-  #     expect(subject.x).to eq(1)
-  #   end
-  # end
+  describe '#x' do
+    it 'returns value of x coordinate' do
+      expect(subject.x).to eq(1)
+    end
+  end
 
-  # describe '#y' do
-  #   it 'returns value of y coordinate' do
-  #     expect(subject.y).to eq(2)
-  #   end
-  # end
+  describe '#y' do
+    it 'returns value of y coordinate' do
+      expect(subject.y).to eq(2)
+    end
+  end
 
   describe '#distance_squared' do
     it 'returns squared distance between two points' do

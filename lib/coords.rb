@@ -4,6 +4,8 @@ require "coords/cartesian3d"
 require "coords/polar"
 require "coords/spherical"
 
+require "coords/shapes/line2d"
+
 module Coords
 
   def self.radians(degrees)
