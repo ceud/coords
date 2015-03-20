@@ -5,6 +5,7 @@ require "coords/polar"
 require "coords/spherical"
 
 require "coords/shapes/line2d"
+require "coords/shapes/line3d"
 
 module Coords
 
