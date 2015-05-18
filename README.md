@@ -27,7 +27,7 @@ Coords.radians(180)
  => 3.141592653589793
 
 # convert radians to degrees
-Coords.radians(Math::PI)
+Coords.degrees(Math::PI)
  => 180.0
 ```
 
